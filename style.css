@@ -22,10 +22,11 @@
                                 'subscribe submit' !important;
 
                                width:65% !important;
-            width:auto !important;
+            width:600px !important;
             margin-top: 0 !important;
             column-gap: 0px !important;
             padding-left: 30px !important;
+           
            
         
     }
@@ -42,18 +43,22 @@
 
     .wrapper{
         height:100% !important;
+        width:700px !important;
+        padding-bottom: 40px !important;
+        padding-left:50px !important;
+        padding-right: 50px !important;
     }
 
     input[type="text"],input[type="password"],input[type="tel"]{
         
-        width:270px !important;
+        width:220px !important;
         
     }
    
     
     select{
        
-    width:270px !important;
+    width:220px !important;
         
     }
     .subscribe{

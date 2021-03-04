@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+   
+   
     <title>Registration-form</title>
 </head>
-<body>
+<body onload="genCaptcha()">
     <div class="wrapper">
 
         <h2 id="heading">Registration Form</h2>
-        <form action="welcome.html" class="container">
+        <form  class="container" onsubmit="return inputCheck(),validateCaptcha()" method="post" action="welcome.html" id="captcha-form">
             <div class="fname">
                 
                 <input type="text" name="fname" placeholder="First Name "id="fname" class="form-field"><br>
@@ -29,12 +32,12 @@
            </div>
 
             <div class="mobile">
-                <i class="fas fa-mobile-alt"></i>
+              
                 <input type="tel" name="mobile" placeholder="Mobile Number" id="mobile" class="form-field"><br>
                 <span class= "mobilereq req">*</span>
             </div>
             <div class="pwd1">
-                <i class="fas fa-lock"></i>
+               
                 <input type="password" name="pwd1"placeholder="Password" id="pwd1" class="form-field"><br>
                 <span class= "pwd1req req">*</span> 
             </div>
@@ -47,13 +50,13 @@
           
 
           <div class="caddress">
-            <i class="fas fa-map-marker-alt"></i>
+          
             <input type="text" name="caddr" placeholder="Current Address" id="caddress" class="form-field"> <br>
             <span class= "addr1req req">*</span>
           </div>
           <div class="ccountry">
            
-            <select name="country-list" id="country"  class="form-field">
+            <select name="country-list" id="ccountry"  class="form-field">
                 <option value="0">Current Country</option>
                 <option value="Britan">Britan</option>
                 <option value="Germany">Germany</option>
@@ -61,11 +64,11 @@
                 <option value="Japan">Japan</option>
                 <option value="America">United States</option>
             </select> <br>
-            <span class= "contry1req req">*</span>
+            <span class= "country1req req">*</span>
            </div>
             <div class="cstate">
                
-                <select name="state-list"id="state" class="form-field">
+                <select name="state-list"id="cstate" class="form-field">
                     <option value="0">Current State</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -106,13 +109,13 @@
                 <span class= "state1req req">*</span>
             </div>
             <div class="paddress form-field">
-                <i class="fas fa-map-marker-alt"></i>
+                
                 <input type="text" name="paddr" placeholder="Permanent Address" id="paddress"> <br>
                 <span class= "addr2req req">*</span>
               </div>
               <div class="pcountry">
                 
-                <select name="country-list" id="country" class="form-field">
+                <select name="country-list" id="pcountry" class="form-field">
                     <option value="0">Permanent country</option>
                     <option value="Britan">Britan</option>
                     <option value="Germany">Germany</option>
@@ -120,11 +123,11 @@
                     <option value="Japan">Japan</option>
                     <option value="America">United States</option> 
                 </select><br>
-                <span class= "contry2req req">*</span>
+                <span class= "country2req req">*</span>
                </div>
                <div class="pstate">
                 
-                <select name="state-list"id="state" class="form-field">
+                <select name="state-list"id="pstate" class="form-field">
                     <option value="0">Permanent  State</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -161,10 +164,10 @@
                     <option value="Uttarakhand">Uttarakhand</option>
                     <option value="West Bengal">West Bengal</option> 
                 </select><br>
-                <span class= "state1req req">*</span>
+                <span class= "state2req req">*</span>
             </div>
             <div class="city">
-                <i class="fas fa-city"></i>
+               
                 <input type="text" name="city" placeholder=" Current City Name" id="city"> <br>
                 <span class= "cityreq req">*</span>
             </div>
@@ -172,7 +175,7 @@
                 <input type="radio" name="gender" id="radio1"><span class="radio-text"></span>Male</span>
                 <input type="radio" name="gender"id="radio2"><span class="radio-text">Female</span>
                 <input type="radio" name="gender" id="radio3"> <span class="radio-text">other</span><br>
-                <span class= "cityreq req">*</span>
+                <span class= "genreq req">*</span>
             </div>
             <div class="subscribe">subscibe to news letter 
 
@@ -183,29 +186,34 @@
                     <input type="radio" id="radio sub-news" value="y" checked name="subscription"> <span class="sub-textY">yes</span>
                     <input type="radio" value="N" id="radio sub-news" name="subscription"> <span class="sub-textN"> No</span>
             
-                </span>
-                
+                </span>                    
+                </div>               
+                <div class="captcha-res">
+                    
+                    <input type="text" name="result" id="result"  placeholder="Enter captcha Result" onkeyup="captchaCheck(e)"> <br>
+                    <span id="errormsg" class="req">*</span>                   
+                </div>
+                <div class="captcha-expr">
+                    <input type="text" name="exprsn" id="exprsn" class="captcha field" readonly required>
+                    <button id="refresh" class="captcha field" type="button" onclick="genCaptcha()"> <i class="fas fa-sync-alt"></i></button> 
                     
                 </div>
-            <div class="submit">
-                <input type="submit" id="btn" value="Register">
-            </div>
-        
-        
-         
-        
-       
-       
-    
-    
-    
-    
-    
-    
+            
+                    
+               
+                <div class="submit">
+                    <input type="submit" id="btn" value="Register">
+                </div>    
     
         </form>
 
+    <div id="extra"></div>
+
     </div>
+    <script src="js/validation.js"></script>
+   
+
+    
    
     
 </body>

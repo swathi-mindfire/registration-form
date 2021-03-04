@@ -19,20 +19,23 @@
                              'cstate paddress'
                               'pcountry pstate'
                                'city radio'
-                                'subscribe submit' !important;
+                               'captcha-res captcha-expr'
+                                'subscribe subscribe'
+                                'submit submit' !important;
 
                                width:65% !important;
-            width:auto !important;
+            width:600px !important;
             margin-top: 0 !important;
-            column-gap: 0px !important;
-            padding-left: 30px !important;
+            column-gap: 30px !important;
+            padding-left: 12% !important;
+           
            
         
     }
     .container>*{
         margin-right: auto;
         margin-left: auto;
-        margin-top:30px;
+        margin-top:20px;
     }
 
     #btn{
@@ -42,19 +45,38 @@
 
     .wrapper{
         height:100% !important;
+        width:700px !important;
+        padding-bottom: 40px !important;
+        padding-left:50px !important;
+        padding-right: 50px !important;
     }
+
+    #exprsn{
+        padding-left: 30px !important;
+    }
+    
 
     input[type="text"],input[type="password"],input[type="tel"]{
         
-        width:270px !important;
+        width:220px !important;
         
+    }
+    #exprsn{
+        width:100px !important;
+    }
+    .captcha-expr{
+        margin-top:-10px !important;
+        margin-left:40px !important;
     }
    
     
     select{
        
-    width:270px !important;
+    width:220px !important;
         
+    }
+    .radio{
+        margin-top:20px !important;
     }
     .subscribe{
         margin-left:auto !important;
@@ -64,7 +86,7 @@
 
 }
 
-@media(max-width:650px){
+@media(max-width:800px){
     .container{
         grid-template-columns: 100% !important;
         grid-template-areas: 'fname' 
@@ -76,6 +98,7 @@
                              'cstate' 'paddress'
                               'pcountry' 'pstate'
                                'city' 'radio'
+                               'captcha-res' 'captcha-expr'
                                 'subscribe' 'submit' !important;
 
 
@@ -91,20 +114,20 @@
     }
     input[type="text"],input[type="password"],input[type="tel"]{
         
-        width:400px !important;
+        width:300px !important;
         
     }
    
     
     select{
        
-        width:400px !important;
+        width:300px !important;
         
     }
     .container>*{
         margin-right: auto;
         margin-left: auto;
-        margin-top:30px !important;
+        margin-top:10px !important;
     }
     .subscribe{
         display: inline !important;
@@ -116,6 +139,11 @@
         margin-left: auto !important;
         margin-right: auto !important;
     }
+    #exprsn{
+        width:200px !important;
+        padding-left: 70px !important;
+    }
+    
     
 }
 
@@ -141,6 +169,11 @@
         margin-left: auto !important;
         margin-right: auto !important;
     }
+
+ 
+}
+@media(max-width:600px){
+
 }
 
 
@@ -156,7 +189,7 @@
 .wrapper{
     background-image: linear-gradient(to right, rgb(33,54,179), rgb(1,172,244));
     max-width:1000px;
-    height:100vh;
+    height:100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -165,10 +198,10 @@
     background: white;
     margin-left: auto;
     margin-right: auto;
-    margin-top:3%;
+    margin-top:2%;
 
     width:85%;
-    height:80%;
+    height:87%;
     padding:20px;
     border-radius: 40px;
     grid-template-columns: auto auto auto ;
@@ -180,12 +213,17 @@
                           'caddress ccountry cstate'
                           'paddress pcountry pstate'
                           'city radio subscribe'
+                          'captcha-res captcha-expr captcha-expr'
                           'submit submit submit';
  
     
    
    
     
+}
+.container>*{
+   
+    margin-bottom:20px !important;
 }
 
 
@@ -250,6 +288,10 @@ select{
     margin-left:30px;
 }
 
+input:focus::placeholder {
+    color: transparent;
+  }
+
 .fname{
     grid-area: fname;
 }
@@ -294,10 +336,58 @@ select{
 }
 .radio{
     grid-area:radio;
+    margin-top:10px;
 }
 .subscribe{
     grid-area:subscribe;
+    margin-top:10px;
 }
+
+.captcha-res{
+    grid-area:captcha-res;
+    margin-top:10px;
+  
+}
+.captcha-expr{
+    grid-area:captcha-expr;
+    
+    
+}
+
+#result:focus  + #errormsg{
+    visibility: hidden;
+    
+
+}
+#exprsn{
+    padding-left: 100px;
+}
+
+
+
+#refresh{
+            
+    outline:none;
+    border:none;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    background-color: transparent;
+}
+
+.fas{
+   
+    font-size: 2em;
+    color:rgba(8, 51, 170, 0.788)
+}
+
+#extra{
+    height:60px;
+}
+
+/*input:focus ~ .req{
+    visibility: hidden;
+}*/
 
 
 .submit{

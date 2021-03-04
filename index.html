@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registration-form</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <h2 id="heading">Registration Form</h2>
+        <form action="welcome.html" class="container">
+            <div class="fname">
+                
+                <input type="text" name="fname" placeholder="First Name "id="fname" class="form-field"><br>
+                <span class= "fnamereq req">*</span>
+            </div> 
+            <div class="lname">
+               
+                <input type="text" name="lnmae" id="lname" placeholder="Last Name" class="form-field"> <br>
+                <span class= "lnamereq req">*</span>
+           </div> 
+           <div class="mail"> 
+                     
+            <input type="text" name="email" placeholder="Email" id="mail1" class="form-field"><br>
+            <span class= "mailreq req">*</span>
+           </div>
+
+            <div class="mobile">
+                <i class="fas fa-mobile-alt"></i>
+                <input type="tel" name="mobile" placeholder="Mobile Number" id="mobile" class="form-field"><br>
+                <span class= "mobilereq req">*</span>
+            </div>
+            <div class="pwd1">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="pwd1"placeholder="Password" id="pwd1" class="form-field"><br>
+                <span class= "pwd1req req">*</span> 
+            </div>
+    
+            <div class="pwd2">
+                <input type="password" name="cpassword" placeholder="Confirm Password"class="pass form-field" id="pwd2"><br>
+                <span class= "pwd2req req">*</span> 
+           </div>
+
+          
+
+          <div class="caddress">
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text" name="caddr" placeholder="Current Address" id="caddress" class="form-field"> <br>
+            <span class= "addr1req req">*</span>
+          </div>
+          <div class="ccountry">
+           
+            <select name="country-list" id="country"  class="form-field">
+                <option value="0">Current Country</option>
+                <option value="Britan">Britan</option>
+                <option value="Germany">Germany</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="America">United States</option>
+            </select> <br>
+            <span class= "contry1req req">*</span>
+           </div>
+            <div class="cstate">
+               
+                <select name="state-list"id="state" class="form-field">
+                    <option value="0">Current State</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Chattisgarh">Chattisgarh</option>               
+                    <option value="Daman and Diu">Daman and Diu</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option>
+                </select>
+                <br>
+                <span class= "state1req req">*</span>
+            </div>
+            <div class="paddress form-field">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" name="paddr" placeholder="Permanent Address" id="paddress"> <br>
+                <span class= "addr2req req">*</span>
+              </div>
+              <div class="pcountry">
+                
+                <select name="country-list" id="country" class="form-field">
+                    <option value="0">Permanent country</option>
+                    <option value="Britan">Britan</option>
+                    <option value="Germany">Germany</option>
+                    <option value="India">India</option>
+                    <option value="Japan">Japan</option>
+                    <option value="America">United States</option> 
+                </select><br>
+                <span class= "contry2req req">*</span>
+               </div>
+               <div class="pstate">
+                
+                <select name="state-list"id="state" class="form-field">
+                    <option value="0">Permanent  State</option>
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chandigarh">Chandigarh</option>
+                    <option value="Chattisgarh">Chattisgarh</option>               
+                    <option value="Daman and Diu">Daman and Diu</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Lakshadweep">Lakshadweep</option>
+                    <option value="Puducherry">Puducherry</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                    <option value="Mizoram">Mizoram</option>
+                    <option value="Nagaland">Nagaland</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Sikkim">Sikkim</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Tripura">Tripura</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                    <option value="West Bengal">West Bengal</option> 
+                </select><br>
+                <span class= "state1req req">*</span>
+            </div>
+            <div class="city">
+                <i class="fas fa-city"></i>
+                <input type="text" name="city" placeholder=" Current City Name" id="city"> <br>
+                <span class= "cityreq req">*</span>
+            </div>
+            <div class="radio">               
+                <input type="radio" name="gender" id="radio1"><span class="radio-text"></span>Male</span>
+                <input type="radio" name="gender"id="radio2"><span class="radio-text">Female</span>
+                <input type="radio" name="gender" id="radio3"> <span class="radio-text">other</span><br>
+                <span class= "cityreq req">*</span>
+            </div>
+            <div class="subscribe">subscibe to news letter 
+
+
+                <span id="sub-radio">
+
+               
+                    <input type="radio" id="radio sub-news" value="y" checked name="subscription"> <span class="sub-textY">yes</span>
+                    <input type="radio" value="N" id="radio sub-news" name="subscription"> <span class="sub-textN"> No</span>
+            
+                </span>
+                
+                    
+                </div>
+            <div class="submit">
+                <input type="submit" id="btn" value="Register">
+            </div>
+        
+        
+         
+        
+       
+       
+    
+    
+    
+    
+    
+    
+    
+        </form>
+
+    </div>
+   
+    
+</body>
+</html>

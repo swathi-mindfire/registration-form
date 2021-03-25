@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+   <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
    
    
@@ -14,48 +15,49 @@
     <div class="wrapper">
 
         <h2 id="heading">Registration Form</h2>
-        <form  class="container" onsubmit="return inputCheck(),validateCaptcha()" method="post" action="welcome.html" id="captcha-form">
+        <form  class="container mx-auto" onsubmit="return inputCheck()" method="post" action="welcome.html" id="captcha-form">
             <div class="fname">
-                
+                <span class= "star req">*</span>
                 <input type="text" name="fname" placeholder="First Name "id="fname" class="form-field"><br>
-                <span class= "fnamereq req">*</span>
+                <span class= "fnamereq req" id="fnamereq"></span>
             </div> 
             <div class="lname">
-               
+                <span class= "star req">*</span>
                 <input type="text" name="lnmae" id="lname" placeholder="Last Name" class="form-field"> <br>
-                <span class= "lnamereq req">*</span>
+                <span class= "lnamereq req" id="lnamereq"></span>
            </div> 
            <div class="mail"> 
-                     
+            <span class= "star req">*</span>        
             <input type="text" name="email" placeholder="Email" id="mail1" class="form-field"><br>
-            <span class= "mailreq req">*</span>
+            <span class= "mailreq req" id="mail1req"></span>
            </div>
 
             <div class="mobile">
-              
+                <span class= "star req">*</span> 
                 <input type="tel" name="mobile" placeholder="Mobile Number" id="mobile" class="form-field"><br>
-                <span class= "mobilereq req">*</span>
+                <span class= "mobilereq req"  id="mobilereq"></span>
             </div>
             <div class="pwd1">
-               
+                <span class= "star req">*</span> 
                 <input type="password" name="pwd1"placeholder="Password" id="pwd1" class="form-field"><br>
-                <span class= "pwd1req req">*</span> 
+                <span class= "pwd1req req" id="pwd1req"></span> 
             </div>
     
             <div class="pwd2">
+                <span class= "star req">*</span> 
                 <input type="password" name="cpassword" placeholder="Confirm Password"class="pass form-field" id="pwd2"><br>
-                <span class= "pwd2req req">*</span> 
+                <span class= "pwd2req req" id="pwd2req"></span> 
            </div>
 
           
 
           <div class="caddress">
-          
+            <span class= "star req">*</span> 
             <input type="text" name="caddr" placeholder="Current Address" id="caddress" class="form-field"> <br>
-            <span class= "addr1req req">*</span>
+            <span class= "addr1req req" id="caddressreq"></span>
           </div>
           <div class="ccountry">
-           
+            <span class= "star req">*</span> 
             <select name="country-list" id="ccountry"  class="form-field">
                 <option value="0">Current Country</option>
                 <option value="Britan">Britan</option>
@@ -64,10 +66,10 @@
                 <option value="Japan">Japan</option>
                 <option value="America">United States</option>
             </select> <br>
-            <span class= "country1req req">*</span>
+            <span class= "country1req req" id="ccountryreq"></span>
            </div>
             <div class="cstate">
-               
+                <span class= "star req">*</span> 
                 <select name="state-list"id="cstate" class="form-field">
                     <option value="0">Current State</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
@@ -106,12 +108,12 @@
                     <option value="West Bengal">West Bengal</option>
                 </select>
                 <br>
-                <span class= "state1req req">*</span>
+                <span class= "state1req req" id="state1req"></span>
             </div>
             <div class="paddress form-field">
                 
                 <input type="text" name="paddr" placeholder="Permanent Address" id="paddress"> <br>
-                <span class= "addr2req req">*</span>
+               
               </div>
               <div class="pcountry">
                 
@@ -123,7 +125,7 @@
                     <option value="Japan">Japan</option>
                     <option value="America">United States</option> 
                 </select><br>
-                <span class= "country2req req">*</span>
+               
                </div>
                <div class="pstate">
                 
@@ -164,37 +166,34 @@
                     <option value="Uttarakhand">Uttarakhand</option>
                     <option value="West Bengal">West Bengal</option> 
                 </select><br>
-                <span class= "state2req req">*</span>
+                
             </div>
             <div class="city">
-               
+                <span class= "star req">*</span> 
                 <input type="text" name="city" placeholder=" Current City Name" id="city"> <br>
-                <span class= "cityreq req">*</span>
+                <span class= "cityreq req"></span>
             </div>
-            <div class="radio">               
-                <input type="radio" name="gender" id="radio1"><span class="radio-text"></span>Male</span>
-                <input type="radio" name="gender"id="radio2"><span class="radio-text">Female</span>
-                <input type="radio" name="gender" id="radio3"> <span class="radio-text">other</span><br>
-                <span class= "genreq req">*</span>
+            <div class="radio"> 
+                <span class= "star req">*</span>               
+                <input type="radio" name="gender" id="radio1"><span class="radio-text"></span> Male</span>
+                <input type="radio" name="gender"id="radio2"><span class="radio-text"> Female</span>
+                <input type="radio" name="gender" id="radio3"> <span class="radio-text"> other</span><br>
+                <span class= "genreq req"></span>
             </div>
             <div class="subscribe">subscibe to news letter 
-
-
-                <span id="sub-radio">
-
-               
-                    <input type="radio" id="radio sub-news" value="y" checked name="subscription"> <span class="sub-textY">yes</span>
-                    <input type="radio" value="N" id="radio sub-news" name="subscription"> <span class="sub-textN"> No</span>
+                 <span id="sub-radio">
+                    <input type="radio" id="radio sub-news" value="y" checked name="subscription"> <span class="sub-textY">  yes</span>
+                    <input type="radio" value="N" id="radio sub-news" name="subscription"> <span class="sub-textN">  No</span>
             
                 </span>                    
                 </div>               
                 <div class="captcha-res">
-                    
+                    <span class= "star req">*</span> 
                     <input type="text" name="result" id="result"  placeholder="Enter captcha Result" onkeyup="captchaCheck(e)"> <br>
-                    <span id="errormsg" class="req">*</span>                   
+                    <span id="resultreq" class="req"></span>                   
                 </div>
                 <div class="captcha-expr">
-                    <input type="text" name="exprsn" id="exprsn" class="captcha field" readonly required>
+                    <input type="text" name="exprsn" id="exprsn" class="captcha field captcha1" readonly required>
                     <button id="refresh" class="captcha field" type="button" onclick="genCaptcha()"> <i class="fas fa-sync-alt"></i></button> 
                     
                 </div>

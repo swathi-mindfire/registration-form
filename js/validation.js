@@ -1,5 +1,7 @@
       function genCaptcha(){
+          
             var expr= document.getElementById('exprsn');
+            
 
             var num1= Math.round((100-10)*Math.random() +10 );
 
@@ -13,8 +15,133 @@
             
             var compute = num1 + op  + num2
 
-            expr.value=   compute
+            expr.value=   compute;
+            //console.log( expr.value)
+            
+
         }
+
+       
+
+       /* var fnameflag,lnameflag,mailflag,pwd1flag,pwd2flag,mobileflag,countryflag,stateflag,cityflag,captchaflag,genderflag,addressflag;
+        fnameflag = lnameflag = mailflag = pwd1flag = pwd2flag = mobileflag = countryflag = stateflag = cityflag = captchaflag = genderflag=  addressflag = true;
+        console.log(fnameflag&&lnameflag)*/
+        formInput= document.querySelectorAll('input');
+        formInput.forEach(element => {
+            element.addEventListener("blur",function(){
+                input =document.getElementById(this.id).value;
+                //console.log(input)
+                var ele = this.id+ "req";
+                if(this.id == "fname"){
+                    if(input==""){                                      
+                        document.getElementById(ele).innerHTML="Please Enter Your First Name";
+                    }
+                    else{
+                        document.getElementById(ele).innerHTML="";
+                    }
+                }
+                if(this.id == "lname"){
+                    if(input==""){                                      
+                        document.getElementById(ele).innerHTML="Please Enter Your Last Name";
+                    }
+                    else{
+                        document.getElementById(ele).innerHTML="";
+                    }
+                }
+                if(this.id == "pwd1"){
+                    if(input==""){                                      
+                        document.getElementById(ele).innerHTML="Please Enter Your password";
+                    }
+                    else{
+                        document.getElementById(ele).innerHTML="";
+                    }
+                }
+                if(this.id == "pwd2"){
+                    if(input==""){                                      
+                        document.getElementById(ele).innerHTML="Please Confirm Your Password";
+                    }
+                    else{
+                        document.getElementById(ele).innerHTML="";
+                    }
+                }
+                if(this.id == "mail1"){
+                    if(input==""){                                      
+                        document.getElementById(ele).innerHTML="Please Confirm Your Password";
+                    }
+                    else{
+                        document.getElementById(ele).innerHTML="";
+                    }
+                }
+                if(this.id == "mobile"){
+                    if(input==""){                                      
+                        document.getElementById(ele).innerHTML="Please Enter Your Mobile Number";
+                    }
+                    else{
+                        document.getElementById(ele).innerHTML="";
+                    }
+                }
+                if(this.id == "caddress"){
+                    if(input==""){                                      
+                        document.getElementById(ele).innerHTML="Please Enter Your Current Address";
+                    }
+                    else{
+                        document.getElementById(ele).innerHTML="";
+                    }
+                }
+                if(this.id == "result"){
+                    if(input==""){                                      
+                        document.getElementById(ele).innerHTML="Please Enter Captcha Result";
+                    }
+                    else{
+                        document.getElementById(ele).innerHTML="";
+                    }
+                }
+        
+                
+               
+                })
+            
+        });
+
+          var country= document.getElementById('ccountry')
+         
+          country.addEventListener("blur",function(){
+           
+            countryreq = document.getElementById('ccountryreq');
+            
+            
+
+            if(country.value=="0"){
+                countryreq.innerHTML= "Please select your country";
+                
+            }
+            else{
+                
+                countryreq.innerHTML= "";
+
+            }
+        })
+        var state= document.getElementById('cstate')
+         
+          state.addEventListener("blur",function(){
+           
+            statereq = document.getElementById('state1req');
+            
+            
+
+            if(state.value=="0"){
+                statereq.innerHTML= "Please select your state";
+                
+            }
+            else{
+                
+                statereq.innerHTML= "";
+
+            }
+        })
+
+
+
 
         function validateCaptcha(){
             var expr= document.getElementById('exprsn').value;
@@ -26,9 +153,9 @@
 
             if (result == ""){
 
-                document.getElementById("errormsg").innerHTML = "Please Enter captcha result";
+                document.getElementById("resultreq").innerHTML = "Please Enter captcha result";
 
-                return false;
+                captchaflag=  false;
                // document.getElementById("errormsg").style.visibility = "visible";
 
             }
@@ -37,9 +164,9 @@
                     
                     if (temp != result){
                         
-                        document.getElementById("errormsg").innerHTML = "wrong captcha result";
+                        document.getElementById("resultreq").innerHTML = "wrong captcha result";
 
-                        return false;
+                        captchaflag=  false;
                         
 
                     }
@@ -53,8 +180,10 @@
                 }
         }
 
-
         function inputCheck(){
+            var fnameflag,lnameflag,mailflag,pwd1flag,pwd2flag,mobileflag,countryflag,stateflag,cityflag,captchaflag,genderflag,addressflag;
+            fnameflag = lnameflag = mailflag = pwd1flag = pwd2flag = mobileflag = countryflag = stateflag = cityflag = captchaflag = genderflag=  addressflag = true;
+            console.log(fnameflag + lnameflag +mailflag +pwd1flag + pwd2flag + mobileflag + countryflag + stateflag +cityflag +captchaflag +genderflag +addressflag)    
     
             var firstName = document.getElementById('fname').value;
             var lastName = document.getElementById('lname').value;
@@ -66,14 +195,15 @@
             var city = document.getElementById('city').value;
            
             var caddress = document.getElementById('caddress').value;
-            var paddress = document.getElementById('paddress').value;
+           
             var ccountry = document.getElementById('ccountry').value;
             var cstate = document.getElementById('cstate').value;
-            var pcountry = document.getElementById('pcountry').value;
-            var pstate = document.getElementById('pstate').value;
+
+            var gendrflag = 0;
+           
             
         
-            var gendrflag= 0;
+            
             var namereg = /^[a-zA-Z]+$/;
             var mailreg = /^([a-zA-Z0-9\.-]+)@([a-zA-Z0-9-]+)\.([a-zA-Z]{2,7})(.[a-z]{2,7})?$/;
             var mobilereg = /^[1-9]{1}[0-9]{9}$/;
@@ -83,18 +213,23 @@
             
             addrreg = /^[a-zA-Z0-9,-]+$/;
            
-            if(firstName.trim() == ""){
+                if(firstName.trim() == ""){
                 /* alert("Please Enter First Name");*/
                 document.getElementsByClassName('fnamereq')[0].innerHTML="Please Enter First Name";
                  document.getElementById('fname').focus();
-                return false;
+
+                 //console.log(fnameflag);
+                 fnameflag= false;
                 }
              
                 if (!firstName.match(namereg)){
                  /*alert("Enter valid First Name");*/
                  document.getElementsByClassName('fnamereq')[0].innerHTML="Enter Valid First Name";
                  document.getElementById('fname').focus();
-                 return false;
+                 //console.log(lnameflag);
+
+                 fnameflag= false;
+                 //console.log(lnameflag);
                 }
              
                 //lastname checking
@@ -104,14 +239,14 @@
                  document.getElementsByClassName('lnamereq')[0].innerHTML="Please Enter Last Name";
             
                  document.getElementById('lname').focus();
-                return false;
+                 lnameflag= false;
                 }
              
                 if (!lastName.match(namereg)){
                  /*alert("Enter valid Last Name");*/
                  document.getElementsByClassName('lnamereq')[0].innerHTML="Enter Valid Last Name";
                  document.getElementById('lname').focus();
-                 return false;
+                 lnameflag= false;
                 }
              
                 if(mail1.trim() == ""){
@@ -119,14 +254,14 @@
                  document.getElementsByClassName('mailreq')[0].innerHTML="Please Enter Your Mail";
                  document.getElementById('mail1').focus();
                  
-                return false;
+                 lnameflag= false;
                 }
              
                 if (!mail1.match(mailreg)){
                  /*alert("Enter valid mail id");*/
                  document.getElementsByClassName('mailreq')[0].innerHTML="Enter Valid Mail";
                  document.getElementById('mail1').focus();
-                 return false;
+                 mailflag= false;
                 }
              
                 if(mobile.trim() == ""){
@@ -134,14 +269,14 @@
                  document.getElementsByClassName('mobilereq')[0].innerHTML="Enter Your Mobile Number";
                  document.getElementById('mobile').focus();
                 
-                return false;
+                 mailflag= false;
                 }
              
                 if (!mobile.match(mobilereg)){
                  /*alert("Enter valid mobile number");*/
                  document.getElementsByClassName('mobilereq')[0].innerHTML="Enter Valid Mobile Number";
                  document.getElementById('mobile').focus();
-                 return false;
+                 mobileflag= false;
                 }
              
                 if(pwd1.trim() == ""){
@@ -149,13 +284,13 @@
                  document.getElementsByClassName('pwd1req')[0].innerHTML="Please Enter Password";
                  document.getElementById('pwd1').focus();
                 
-                return false;
+                 pwd1flag= false;
                 }
                 if(pwd1.length<8){
                     /*alert("Password length should be minimum 8 characters")*/
                     document.getElementsByClassName('pwd1req')[0].innerHTML="Password length should be minimum 8 characters";
                     document.getElementById('pwd1').focus();
-                    return false;
+                    pwd1flag= false;
                 }
              
                 if (!pwd1.match(pwdreg)){
@@ -163,7 +298,7 @@
                  document.getElementsByClassName('pwd1req')[0].innerHTML="Enter valid password";
                  
                  document.getElementById('pwd1').focus();
-                 return false;
+                 pwd1flag= false;;
                 }
              
                 if(pwd2.trim() == ""){
@@ -171,14 +306,14 @@
                  document.getElementsByClassName('pwd2req')[0].innerHTML="Please confirm your password";
                  document.getElementById('pwd2').focus();
                 
-                return false;
+                 pwd2flag= false;;
                 }
                 if (!(pwd1 === pwd2)) {
                  /*alert("Passwords not matched");*/
                  document.getElementsByClassName('pwd2req')[0].innerHTML="Passwords not matched";
                  
                  document.getElementById('pwd2').focus();
-                 return false;
+                 pwd2flag= false;
                 }
             
                 if(caddress.trim() == ""){
@@ -186,28 +321,30 @@
                  document.getElementsByClassName('addr1req')[0].innerHTML="Enter your current address";
                  document.getElementById('caddress').focus();
                 
-                return false;
+                 addressflag= false;
                 }
              
                 if (!caddress.match(addrreg)){
                 /* alert("Enter valid address ");*/
                 document.getElementsByClassName('addr1req')[0].innerHTML="Enter valid address";
                  document.getElementById('caddress').focus();
-                 return false;
+                 addressflag= false;
                 }
                 if(ccountry == "0"){
                  /*alert("please select your country");*/
                  document.getElementsByClassName('country1req')[0].innerHTML="select your current country";
-                 return false;
+                 countryflag= false;
              }
             
              if(cstate == "0"){
               /*alert("please select your state");*/
               document.getElementsByClassName('state1req')[0].innerHTML="select your  current state";
-              return false;
+              stateflag= false;
               }
+
+              /*
               if(paddress.trim() == ""){
-                 /*alert("Please Enter your permanent address");*/
+                 alert("Please Enter your permanent address");
                  document.getElementsByClassName('addr2req')[0].innerHTML="Enter your permanent address";
                  document.getElementById('paddress').focus();
                 
@@ -215,37 +352,38 @@
                 }
              
                 if (!paddress.match(addrreg)){
-                 /*alert("Enter valid present address ");*/
+                 alert("Enter valid present address ");
                  document.getElementsByClassName('addr2req')[0].innerHTML="Enter valid present address";
                  document.getElementById('paddress').focus();
                  return false;
                 }
              
              if(pcountry == "0"){
-                 /*alert("please select your country");*/
+                 alert("please select your country");
                  document.getElementsByClassName('country2req')[0].innerHTML="select your current country";
                  return false;
              }
             
              if(pstate == "0"){
-              /*alert("please select your state");*/
+              alert("please select your state");
               document.getElementsByClassName('state2req')[0].innerHTML="select your  current state";
               return false;
              }
+            */
             
              if(city.trim() == ""){
                  /* alert("Please Enter city name");*/
                  document.getElementsByClassName('cityreq')[0].innerHTML="Please Enter city name";
                   document.getElementById('city').focus();
                  
-                 return false;
+                 cityflag=  false;
                  }
               
                  if (!city.match(cityreg)){
                   /*alert("Enter valid city name");*/
                   document.getElementsByClassName('cityreq')[0].innerHTML="Enter valid city name";
                   document.getElementById('city').focus();
-                  return false;
+                  cityflag=  false;
                  }
             
             
@@ -258,13 +396,24 @@
                 }
                  if(gendrflag == 0){
                      /*alert("please choose gender")*/
-                     document.getElementsByClassName('genreq')[0].innerHTML="please choose gender";
-                     return false;
+                     document.getElementsByClassName('genreq')[0].innerHTML="please select gender";
+                     genderflag= false;
              
                  }        
              
         
                 validateCaptcha();
+
+                        
+                console.log(fnameflag + lnameflag +mailflag +pwd1flag + pwd2flag + mobileflag + countryflag + stateflag +cityflag +captchaflag +genderflag +addressflag)    
+    
+
+            if(!(fnameflag&&lnameflag&&mailflag&&pwd1flag&&pwd2flag&&mobileflag&&countryflag&&stateflag&&cityflag&&captchaflag&&genderflag&&addressflag)){
+                return false;
+            }
+            else{
+                return true;
+            }
         
         
         }

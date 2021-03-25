@@ -268,8 +268,18 @@
     }
     input[type="text"],input[type="password"],input[type="tel"],select{
         
-        width:200px !important;
+        width:350px !important;
         
+    }
+    #btn{
+       
+        width:320px !important;
+       
+       
+    }
+    .radio{
+        position: relative !important;
+        left: -20px !important;
     }
     .captcha-res{
         position: relative !important;
@@ -282,6 +292,16 @@
         left:20px !important;
         
       
+    }
+
+    #sub-text::after{
+        content: "\a" !important;
+        white-space: pre !important;
+
+    }
+    .subscribe{
+        position: relative !important;
+        left:170px !important
     }
 
   
